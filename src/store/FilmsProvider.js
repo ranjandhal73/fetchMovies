@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 function FilmsProvider({children}) {
-    const URL = 'https://crudcrud.com/api/b6ea39807aac4060978fdc1e95579f46/films'
+    const URL = 'https://crudcrud.com/api/8fdbdb07fb1c44938fd557498bf0c138/films'
     const [film,setFilm] = useState([])
 
     const addFilms = (film) =>{
@@ -14,9 +14,9 @@ function FilmsProvider({children}) {
         })
         
     }
-
-    const removeFilms = (id) =>{
-        setFilm((prev)=>prev.filter(film => film.id !== id));
+    const  removeFilms =  (id) =>{
+        setFilm((prev)=>prev.filter(film => film._id !== id));
+         axios.delete(`${URL}/${id}`);
     }
 
     useEffect(()=>{

@@ -10,6 +10,7 @@ const MovieList = ({film}) => {
       {film.map((movie) => (
         <Movie
           key={movie._id}
+          id={movie._id}
           title={movie.title}
           releaseDate={movie.releaseDate}
           openingText={movie.openingText}
